@@ -16,7 +16,7 @@ pnpm add jweixin-esm
 # yarn add jweixin-esm
 ```
 
-## Useage
+## Usage
 
 ```typescript
 import weixin from 'jweixin-esm'
