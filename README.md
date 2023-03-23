@@ -6,7 +6,7 @@
 
 ## About
 
-基于微信官方的 JSSDK [jweixin-1.6.0.js](http://res.wx.qq.com/open/js/jweixin-1.6.0.js) 改造的 **ESM 模块**，支持 **TypeScript 类型**，并且**附带完整的注释文档**。[官方文档](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html)
+基于微信官方的 JSSDK [jweixin-1.6.0.js](http://res.wx.qq.com/open/js/jweixin-1.6.0.js) 改造的 **ESM 模块**，支持 **TypeScript 类型**，并且**附带完整的注释文档**。[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html)
 
 ## Installation
 
