@@ -1,0 +1,38 @@
+{
+  "name": "jweixin-esm",
+  "version": "1.6.0",
+  "description": "微信JSSDK ESM模块 附带TS类型以及详细注释",
+  "type": "module",
+  "exports": "./lib/jweixin-1.6.0.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [
+    "wxjssdk",
+    "weixin",
+    "jweixin",
+    "wechat",
+    "jssdk",
+    "wx",
+    "weixin-types",
+    "weixin-typescript",
+    "wx-types",
+    "wx-typescript",
+    "jssdk-types",
+    "jssdk-typescript"
+  ],
+  "author": "wtto00 <wtto00@outlook.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wtto00/jweixin-module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wtto00/jweixin-module/issues"
+  },
+  "homepage": "https://github.com/wtto00/jweixin-module#readme"
+}
