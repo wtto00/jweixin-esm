@@ -28,6 +28,3 @@ version-resolver:
 template: |
   ## 更新
   $CHANGES
-
-  ## Contributors
-  $CONTRIBUTORS
