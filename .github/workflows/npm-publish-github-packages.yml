@@ -8,7 +8,32 @@ on:
     types: [published]
 
 jobs:
+  version-check:
+    runs-on: ubuntu-latest
+    name: Version Check
+    steps:
+      - uses: actions/checkout@v2.4.2
+      # 检查npm包的版本号和本地packages.json的版本号是否重复
+      # https://github.com/marketplace/actions/version-check
+      - id: cpv
+        uses: PostHog/check-package-version@v2
+
+      - name: cpv false output
+        if: steps.cpv.outputs.is-new-version == 'false' || steps.cpv.outputs.committed-version < steps.cpv.outputs.published-version
+        run: |
+          echo "Committed version: ${{ steps.cpv.outputs.committed-version }}"
+          echo "Published version: ${{ steps.cpv.outputs.published-version }}"
+          echo "Is new version: ${{ steps.cpv.outputs.is-new-version }}"
+          exit 1
+      - name: cpv output
+        if: steps.cpv.outputs.is-new-version == 'true'
+        run: |
+          echo "Committed version: ${{ steps.cpv.outputs.committed-version }}"
+          echo "Published version: ${{ steps.cpv.outputs.published-version }}"
+
+  # publish to github package
   publish-gpr:
+    needs: version-check
     runs-on: ubuntu-latest
     name: Publish Github Package
     permissions:
@@ -31,7 +56,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
+  # publish to npm package
   public-npm:
+    needs: version-check
     runs-on: ubuntu-latest
     name: Publish Npm Package
     steps:
