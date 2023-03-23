@@ -8,9 +8,6 @@
   "files": [
     "lib"
   ],
-  "scripts": {
-    "build": "vite build"
-  },
   "keywords": [
     "wxjssdk",
     "weixin",
@@ -29,10 +26,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wtto00/jweixin-module.git"
+    "url": "git+https://github.com/wtto00/jweixin-esm.git"
   },
   "bugs": {
-    "url": "https://github.com/wtto00/jweixin-module/issues"
+    "url": "https://github.com/wtto00/jweixin-esm/issues"
   },
-  "homepage": "https://github.com/wtto00/jweixin-module#readme"
+  "homepage": "https://github.com/wtto00/jweixin-esm#readme"
 }
