@@ -48,7 +48,7 @@ jobs:
         id: info
         uses: jaywcjlove/github-action-package@main
         with:
-          rename: '@$GITHUB_ACTION_REPOSITORY'
+          rename: '@${{ github.repository }}'
 
       - uses: actions/setup-node@v3
         with:
