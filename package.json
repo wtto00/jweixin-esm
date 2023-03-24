@@ -1,6 +1,6 @@
 {
   "name": "@wtto00/jweixin-esm",
-  "version": "1.6.0",
+  "version": "1.6.0-1",
   "description": "微信JSSDK ESM模块 附带TS类型以及详细注释",
   "type": "module",
   "exports": "./lib/jweixin-1.6.0.esm.js",
