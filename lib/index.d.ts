@@ -2,7 +2,7 @@
  * 微信JS-SDK说明文档
  * [https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html)
  */
-declare namespace WX {
+declare module WX {
   /**
    * config注入的jsApi
    * 即将废弃: onMenuShareTimeline onMenuShareAppMessage onMenuShareQQ onMenuShareQZone
@@ -1404,8 +1404,8 @@ declare module '@wtto00/jweixin-esm' {
 }
 
 interface Window {
-  wx: WX
-  jWeixin: WX
+  wx: typeof WX
+  jWeixin: typeof WX
   /**
    * 微信环境中才有该字段，外部浏览器无此字段
    */
