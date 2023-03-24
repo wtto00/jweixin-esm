@@ -141,7 +141,7 @@ declare module WX {
    * 用户取消时："xxx:cancel"，其中xxx为调用的接口名
    * 调用失败时：其值为具体错误信息
    */
-  type CommonApiOptionsCallbackParams<T> = {
+  type CommonApiOptionsCallbackParams<T extends Record = {}> = {
     [key: string]: any
     errMsg: string
   } & T
