@@ -1,5 +1,5 @@
 {
-  "name": "jweixin-esm",
+  "name": "@wtto00/jweixin-esm",
   "version": "1.6.0",
   "description": "微信JSSDK ESM模块 附带TS类型以及详细注释",
   "type": "module",

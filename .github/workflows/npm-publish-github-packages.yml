@@ -44,12 +44,6 @@ jobs:
         with:
           ref: ${{ github.event.release.target_commitish }}
 
-      - name: package.json info
-        id: info
-        uses: jaywcjlove/github-action-package@main
-        with:
-          rename: '@${{ github.repository }}'
-
       - uses: actions/setup-node@v3
         with:
           node-version: 16

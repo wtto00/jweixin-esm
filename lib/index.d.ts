@@ -1399,7 +1399,7 @@ declare namespace WX {
   /* --------------------------------- 快速输入 End --------------------------------- */
 }
 
-declare module 'jweixin-esm' {
+declare module '@wtto00/jweixin-esm' {
   export default WX
 }
 
