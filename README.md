@@ -2,7 +2,7 @@
 
 微信 JSSDK, ESM 模块, 附带 TS 类型以及详细注释
 
-[![jweixin:1.6.0](https://img.shields.io/badge/jweixin.js-1.6.0-blue?style=flat-square&logo=WeChat)](http://res.wx.qq.com/open/js/jweixin-1.6.0.js) [![DOCUMENT](https://img.shields.io/badge/GO%20TO-DOCUMENT-blue?style=flat-square&logo=WeChat)](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html)  
+[![jweixin:1.6.0](https://img.shields.io/badge/jweixin.js-1.6.0-blue?style=flat-square&logo=WeChat)](http://res.wx.qq.com/open/js/jweixin-1.6.0.js) [![DOCUMENT](https://img.shields.io/badge/DOCUMENT-GO%20TO-blue?style=flat-square&logo=WeChat)](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html)  
 [![NPM](https://flat.badgen.net/npm/v/@wtto00/jweixin-esm?icon=npm)](https://www.npmjs.com/package/@wtto00/jweixin-esm) [![GitHub Package](https://img.shields.io/github/package-json/v/wtto00/jweixin-esm?style=flat-square&logo=github&label=package)](https://github.com/wtto00/jweixin-esm/pkgs/npm/jweixin-esm) ![TypeScript:SUPPORT](https://img.shields.io/badge/TypeScript-SUPPORT-blue?style=flat-square)  
 [![PR:WELCOME](https://img.shields.io/badge/PR-WELCOME-blue?style=flat-square)](https://github.com/wtto00/jweixin-esm/pulls) [![ISSUE:WELCOME](https://img.shields.io/badge/ISSUE-WELCOME-blue?style=flat-square)](https://github.com/wtto00/jweixin-esm/issues)
 
