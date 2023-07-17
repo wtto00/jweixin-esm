@@ -675,6 +675,119 @@ declare module WX {
       telNumber: string
     }> {}
 
+  /**
+   * 小程序页面间事件通信通道
+   * @link [官方文档](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.html)
+   */
+  interface MPEventChannel {
+    /**
+     * 触发一个事件
+     * @param eventName 事件名称
+     * @param args 事件参数
+     */
+    emit: (eventName: string, args: any) => void
+    /**
+     * 持续监听一个事件
+     * @param eventName 事件名称
+     * @param fn 事件监听函数
+     */
+    on: (eventName: string, fn: (args: any) => void) => void
+    /**
+     * 监听一个事件一次，触发后失效
+     * @param eventName 事件名称
+     * @param fn 事件监听函数
+     */
+    once: (eventName: string, fn: (args: any) => void) => void
+    /**
+     * 取消监听一个事件。
+     * 给出第二个参数时，只取消给出的监听函数，
+     * 否则取消所有监听函数
+     * @param eventName 事件名称
+     * @param fn 事件监听函数
+     */
+    off: (eventName: string, fn: (args: any) => void) => void
+  }
+  /**
+   * 小程序路由跳转参数
+   */
+  interface MPRouterOptions<T = void> extends CommonApiOptions<T> {
+    /**
+     * 需要跳转的应用内非 tabBar 的页面的路径 (代码包路径), 路径后可以带参数。
+     * 参数与路径之间使用 ? 分隔，参数键与参数值用 = 相连，不同参数用 & 分隔；
+     * 如 'path?key=value&key2=value2'
+     */
+    url: string
+  }
+  /**
+   * 小程序 wx.miniProgram.navigateTo 参数
+   */
+  interface MPNavigateToOptions extends MPRouterOptions<MPEventChannel> {
+    /**
+     * 页面间通信接口，用于监听被打开页面发送到当前页面的数据。
+     * 基础库 2.7.3 开始支持。
+     */
+    events?: Record<string, (args: any) => void>
+    /**
+     * 2.29.2 自定义路由类型，相关文档 [自定义路由](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/skyline/custom-route.html)
+     */
+    routeType?: string
+  }
+  /**
+   * 小程序 wx.miniProgram.navigateBack 参数
+   */
+  interface MPNavigateBackOptions extends CommonApiOptions {
+    /**
+     * 返回的页面数，如果 delta 大于现有页面数，则返回到首页。
+     */
+    delta: number
+  }
+  /**
+   * 小程序相关API
+   * @link [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html#%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3-1)
+   */
+  interface MiniProgram {
+    /**
+     * 获取当前环境,是否是小程序web-view
+     * @param callback 回调函数
+     */
+    getEnv: (callback: (res: { miniprogram?: boolean }) => void) => void
+    /**
+     * 向小程序发送消息，
+     * 会在以下特定时机触发组件的message事件：
+     * 小程序后退、组件销毁、分享、复制链接（2.31.1）
+     * @param params 向小程序发送的消息体
+     */
+    postMessage: (params: { data: any }) => void
+    /**
+     * 保留当前页面，跳转到应用内的某个页面。
+     * 但是不能跳到 tabbar 页面。
+     * 使用 wx.navigateBack 可以返回到原页面。
+     * 小程序中页面栈最多十层。
+     * @param options 跳转参数
+     */
+    navigateTo: (options: MPNavigateToOptions) => void
+    /**
+     * 关闭当前页面，返回上一页面或多级页面。
+     * @param options 跳转参数
+     */
+    navigateBack: (options: MPNavigateBackOptions) => void
+    /**
+     * 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面
+     * @param options 跳转参数
+     */
+    switchTab: (options: MPRouterOptions) => void
+    /**
+     * 关闭所有页面，打开到应用内的某个页面
+     * @param options 跳转参数
+     */
+    reLaunch: (options: MPRouterOptions) => void
+    /**
+     * 关闭当前页面，跳转到应用内的某个页面。但是不允许跳转到 tabbar 页面。
+     * @param options 跳转参数
+     */
+    redirectTo: (options: MPRouterOptions) => void
+  }
+
   /* --------------------------------- 以下是所有方法 --------------------------------- */
 
   /**
@@ -1397,6 +1510,13 @@ declare module WX {
    */
   function openAddress(options: OpenAddressOptions): void
   /* --------------------------------- 快速输入 End --------------------------------- */
+
+  /* --------------------------------- 小程序 Start --------------------------------- */
+  /**
+   * 微信小程序相关API
+   */
+  export const miniProgram: MiniProgram
+  /* --------------------------------- 小程序 End --------------------------------- */
 }
 
 declare module '@wtto00/jweixin-esm' {
