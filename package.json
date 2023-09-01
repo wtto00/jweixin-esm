@@ -1,9 +1,9 @@
 {
   "name": "@wtto00/jweixin-esm",
-  "version": "1.6.0-3",
+  "version": "1.6.0-4",
   "description": "微信JSSDK ESM模块 附带TS类型以及详细注释",
   "type": "module",
-  "exports": "./lib/jweixin-1.6.0.esm.js",
+  "module": "./lib/jweixin-1.6.0.esm.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib"
@@ -34,5 +34,11 @@
   "bugs": {
     "url": "https://github.com/wtto00/jweixin-esm/issues"
   },
-  "homepage": "https://github.com/wtto00/jweixin-esm#readme"
+  "homepage": "https://github.com/wtto00/jweixin-esm#readme",
+  "scripts": {
+    "test": "tsc --traceResolution ./lib/index.d.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
 }

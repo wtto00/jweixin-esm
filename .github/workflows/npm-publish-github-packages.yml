@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Version Check
     steps:
-      - uses: actions/checkout@v2.4.2
+      - uses: actions/checkout@v3
       # 检查npm包的版本号和本地packages.json的版本号是否重复
       # https://github.com/marketplace/actions/version-check
       - id: cpv
@@ -72,3 +72,4 @@ jobs:
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_CONFIG_PROVENANCE: true
