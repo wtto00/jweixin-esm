@@ -19,7 +19,6 @@ jobs:
       - uses: pnpm/action-setup@v2
         name: Install pnpm
         with:
-          version: 7
           run_install: false
 
       - name: Get pnpm store directory
@@ -37,5 +36,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
       - name: Run Test
         run: pnpm test
