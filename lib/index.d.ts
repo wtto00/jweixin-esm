@@ -141,7 +141,7 @@ declare module WX {
    * 用户取消时："xxx:cancel"，其中xxx为调用的接口名
    * 调用失败时：其值为具体错误信息
    */
-  type CommonApiOptionsCallbackParams<T extends Record = {}> = {
+  type CommonApiOptionsCallbackParams<T extends object = {}> = {
     [key: string]: any
     errMsg: string
   } & T
@@ -150,7 +150,7 @@ declare module WX {
    * T: success回调函数的参数
    * D: complete回调函数的参数
    */
-  interface CommonApiOptions<T extends Record = {}, D extends Record = {}> {
+  interface CommonApiOptions<T extends object = {}, D extends object = {}> {
     /**
      * 接口调用成功时执行的回调函数。
      */
@@ -710,7 +710,7 @@ declare module WX {
   /**
    * 小程序路由跳转参数
    */
-  interface MPRouterOptions<T = void> extends CommonApiOptions<T> {
+  interface MPRouterOptions<T extends object = {}> extends CommonApiOptions<T> {
     /**
      * 需要跳转的应用内非 tabBar 的页面的路径 (代码包路径), 路径后可以带参数。
      * 参数与路径之间使用 ? 分隔，参数键与参数值用 = 相连，不同参数用 & 分隔；
