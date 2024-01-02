@@ -113,6 +113,7 @@ declare module WX {
    * - 微信版本要求为：7.0.12及以上
    * - 系统版本要求为：iOS 10.3及以上、Android 5.0及以上
    * - JS接口文件：1.6.0及以上
+   * @link https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_Open_Tag.html
    */
   type OpenTag = 'wx-open-launch-weapp' | 'wx-open-launch-app' | 'wx-open-subscribe' | 'wx-open-audio'
 
