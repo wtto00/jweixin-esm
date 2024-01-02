@@ -107,6 +107,16 @@ declare module WX {
     | 'menuItem:share:email'
     | 'menuItem:share:brand'
 
+  /**
+   * config注入的开放标签
+   * 微信开放标签有最低的微信版本要求、最低的系统版本要求，以及最低的JS接口文件版本要求。
+   * - 微信版本要求为：7.0.12及以上
+   * - 系统版本要求为：iOS 10.3及以上、Android 5.0及以上
+   * - JS接口文件：1.6.0及以上
+   * @link https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_Open_Tag.html
+   */
+  type OpenTag = 'wx-open-launch-weapp' | 'wx-open-launch-app' | 'wx-open-subscribe' | 'wx-open-audio'
+
   interface ConfigOptions {
     /**
      * 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -133,6 +143,11 @@ declare module WX {
      * 详情见[附录2](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#63)
      */
     jsApiList: JsApi[]
+    /**
+     * 需要使用的开放标签列表
+     * @example ['wx-open-launch-app']
+     */
+    openTagList?: OpenTag[]
   }
 
   /**
@@ -1540,4 +1555,13 @@ interface Window {
    * [小程序文档](https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html#%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3-4)
    */
   __wxjs_environment?: 'miniprogram'
+}
+
+interface GlobalEventHandlersEventMap {
+  /**
+   * 对于符合微信或系统最低版本要求但仍无法使用微信开放标签的场景，
+   * 将会在下方使用步骤中的wx.config权限验证成功后触发WeixinOpenTagsError事件告知开发者。
+   * 仅无法使用微信开发标签，JS-SDK其他功能不受影响。
+   */
+  WeixinOpenTagsError: CustomEvent<{ errMsg?: string }>
 }

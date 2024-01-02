@@ -41,7 +41,8 @@ const configData: WX.ConfigOptions = {
   timestamp: '',
   nonceStr: '',
   signature: '',
-  jsApiList: [] // WX.JsApi[]
+  jsApiList: [], // WX.JsApi[]
+  openTagList: [] // WX.OpenTag[]
 }
 weixin.config(configData)
 ```
