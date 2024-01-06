@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Version Check
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       # 检查npm包的版本号和本地packages.json的版本号是否重复
       # https://github.com/marketplace/actions/version-check
       - id: cpv
@@ -40,7 +40,7 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.release.target_commitish }}
 
@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Publish Npm Package
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.release.target_commitish }}
 
