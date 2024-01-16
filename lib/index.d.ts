@@ -1530,12 +1530,13 @@ declare module WX {
   /**
    * 微信小程序相关API
    */
-  export const miniProgram: MiniProgram
+  const miniProgram: MiniProgram
   /* --------------------------------- 小程序 End --------------------------------- */
 }
 
 declare module '@wtto00/jweixin-esm' {
-  export default WX
+  const wx: typeof WX
+  export default wx
 }
 
 interface Window {
@@ -1564,4 +1565,9 @@ interface GlobalEventHandlersEventMap {
    * 仅无法使用微信开发标签，JS-SDK其他功能不受影响。
    */
   WeixinOpenTagsError: CustomEvent<{ errMsg?: string }>
+  /**
+   * 小程序下web-view中，JSSDK初始化完成后的回调事件
+   * @link https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html
+   */
+  WeixinJSBridgeReady: void
 }
